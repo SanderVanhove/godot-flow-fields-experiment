@@ -11,7 +11,7 @@ var flow_field: FlowField
 
 
 func _ready():
-	modulate = Color(randf(), 0, 0)
+	modulate = Color(0, randf(), randf())
 	modulate.a = 0
 	_tween.interpolate_property(self, "modulate:a", 0, 0.05, .3)
 	_tween.start()

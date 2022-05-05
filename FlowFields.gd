@@ -2,8 +2,10 @@ extends Node2D
 
 
 ### Automatic References Start ###
+onready var _color_rect: ColorRect = $CanvasLayer/ColorRect
 onready var _flow_field: Node2D = $FlowField
 onready var _particles: Node2D = $Particles
+onready var _timer: Timer = $Timer
 ### Automatic References Stop ###
 
 
@@ -11,11 +13,17 @@ var ParticleClass = preload("Particle.tscn")
 
 
 func _ready():
+	#_color_rect.hide()
 	randomize()
+	
+	yield(get_tree(), "idle_frame")
+	yield(get_tree(), "idle_frame")
 	get_viewport().set_clear_mode(Viewport.CLEAR_MODE_NEVER)
 
 	for particle in _particles.get_children():
 		particle.flow_field = _flow_field
+	
+	_timer.start()
 
 
 func _input(event):

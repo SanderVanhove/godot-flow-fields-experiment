@@ -28,3 +28,7 @@ config/icon="res://icon.png"
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/node_referencer/plugin.cfg" )
+
+[rendering]
+
+environment/default_clear_color=Color( 0.0666667, 0.0352941, 0.0901961, 1 )
